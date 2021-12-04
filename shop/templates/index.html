@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%load custom_filter%}
+{%block title%}shop{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="row mx-auto">
+        {%for product in products%}
+        <div class="col-4 p-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{product.thumbnail.url}}" class="card-img-top" alt="...">
+                <hr>
+                <div class="card-body p-0 mx-auto">
+                    <h4>{{product.name | title}}</h4>
+                    <hr>
+                    <h5>Price:{{product.price}}</h5>
+                </div>
+                <div class="card-footer p-0">
+                    <a href="/product/{{product.id}}" class="btn btn-primary btn-block">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        {%endfor%}
+          <hr>
+    </div>
+</div>
+{%endblock%}
