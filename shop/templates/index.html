@@ -5,7 +5,23 @@
 <div class="container">
     <div class="row mx-auto">
         {%for product in products%}
-        <div class="col-4 p-3">
+        <div className="wrapper">
+            <div className="product-img">
+            <img src= {Product.imgUrl} height="420" width="327" />
+           </div>
+          <div className="product-info">
+            <div className="product-text">
+              <h1>{Product.ProductName}</h1>
+              <h2>We love Earth</h2>
+              <p>Lorem Functional objects. The surfaces<br /> appear to be sliced and pulled aside,<br /> allowing room for growth. </p>
+            </div>
+            <div className="product-price-btn">
+              <p><span>{Product.price}</span></p>
+              <button type="button" >buy now</button>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-4 p-3">
             <div class="card" style="width: 18rem;">
                 <img src="{{product.thumbnail.url}}" class="card-img-top" alt="...">
                 <hr>
@@ -18,7 +34,7 @@
                     <a href="/product/{{product.id}}" class="btn btn-primary btn-block">Buy Now</a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         {%endfor%}
           <hr>
