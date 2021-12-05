@@ -4,7 +4,7 @@ from .views.index import index, logout
 from .views import LoginView, SigninView
 from .views.products import productDetails
 from .views.download import downloadFree
-from .views.payment import createPayment, verifyPayment, downloadPaidProduct
+from .views.payment import createPayment, success
 from .middlewares.login_required import login_required
 from .middlewares.can_not_acess_after_login import canNotAcessAfterLogin
 
@@ -21,6 +21,6 @@ urlpatterns = [
     path('download-free/<int:product_id>/', downloadFree, name='downloadFree'),
 
     path('create-payment/<int:product_id>/', login_required(createPayment), name='createPayment'),
-    path('complete-payment/', verifyPayment, name='verifyPayment'),
-    path('download/paid/<int:product_id>/', login_required(downloadPaidProduct), name='downloadPaidProduct'),
+    path('success', success, name='success')
+    
 ]
